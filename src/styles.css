@@ -3,21 +3,21 @@
 :root {
   color-scheme: light;
   --cream: #fbfaf6;
-  --mint: #d5f2f2;
-  --green: #007a67;
-  --green-dark: #072c23;
+  --mint: #ead5f0;
+  --green: #7A4988;
+  --green-dark: #2d1a33;
   --ink: #292b2f;
   --muted: #6d747c;
-  --line: #dfe7e3;
+  --line: #e3dde7;
   --panel: #ffffff;
-  --soft: #f4f8f6;
+  --soft: #faf5fc;
   --blue: #2448d8;
-  --green-soft: #e3f8ec;
+  --green-soft: #f3e8f7;
   --amber: #a65c00;
   --amber-soft: #fff2cf;
   --red: #b42318;
   --red-soft: #ffe5e1;
-  --shadow: 0 28px 80px rgba(7, 44, 35, 0.12);
+  --shadow: 0 28px 80px rgba(45, 26, 51, 0.12);
 }
 
 * {
@@ -114,7 +114,7 @@ button {
 .nav-cta:hover,
 .primary-cta:hover,
 button:hover {
-  background: #006452;
+  background: #623a72;
   box-shadow: 0 14px 30px rgba(0, 122, 103, 0.18);
   transform: translateY(-1px);
 }
@@ -193,7 +193,7 @@ h1 {
   background: var(--mint);
   border: 1px solid rgba(0, 122, 103, 0.12);
   border-radius: 44px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 32px 80px rgba(74, 38, 92, 0.28);
 }
 
 .product-header,
@@ -220,7 +220,7 @@ h1 {
 }
 
 .preview-label {
-  color: rgba(7, 44, 35, 0.72);
+  color: rgba(45, 26, 51, 0.72);
   font-size: 0.86rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -257,12 +257,12 @@ h1 {
   margin-bottom: 14px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(7, 44, 35, 0.08);
+  border: 1px solid rgba(45, 26, 51, 0.08);
   border-radius: 28px;
 }
 
 .health-card span {
-  color: rgba(7, 44, 35, 0.72);
+  color: rgba(45, 26, 51, 0.72);
   font-weight: 800;
 }
 
@@ -299,7 +299,7 @@ h1 {
   min-height: 116px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(7, 44, 35, 0.08);
+  border: 1px solid rgba(45, 26, 51, 0.08);
   border-radius: 28px;
 }
 
@@ -313,7 +313,7 @@ h1 {
 
 .metric span {
   display: block;
-  color: rgba(7, 44, 35, 0.72);
+  color: rgba(45, 26, 51, 0.72);
   font-size: 0.9rem;
   font-weight: 800;
 }
@@ -339,7 +339,7 @@ h1 {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 28px;
-  box-shadow: 0 12px 35px rgba(7, 44, 35, 0.05);
+  box-shadow: 0 12px 35px rgba(45, 26, 51, 0.05);
 }
 
 .feature-top {
@@ -444,7 +444,7 @@ h1 {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 36px;
-  box-shadow: 0 18px 54px rgba(7, 44, 35, 0.08);
+  box-shadow: 0 18px 54px rgba(45, 26, 51, 0.08);
 }
 
 .campaign-form,
@@ -605,7 +605,7 @@ select:focus {
   align-items: center;
   margin-bottom: 16px;
   padding: 20px;
-  background: #f8fbfa;
+  background: var(--soft);
   border: 1px solid var(--line);
   border-radius: 28px;
 }
@@ -626,6 +626,49 @@ select:focus {
   overflow-x: auto;
   border: 1px solid var(--line);
   border-radius: 28px;
+  transform-origin: top;
+  animation: list-settle 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes list-settle {
+  from {
+    opacity: 0;
+    transform: scaleY(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes row-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table-wrap tbody tr {
+  animation: row-reveal 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.table-wrap tbody tr:nth-child(1) { animation-delay: 30ms; }
+.table-wrap tbody tr:nth-child(2) { animation-delay: 60ms; }
+.table-wrap tbody tr:nth-child(3) { animation-delay: 90ms; }
+.table-wrap tbody tr:nth-child(4) { animation-delay: 120ms; }
+.table-wrap tbody tr:nth-child(5) { animation-delay: 150ms; }
+.table-wrap tbody tr:nth-child(6) { animation-delay: 180ms; }
+.table-wrap tbody tr:nth-child(n + 7) { animation-delay: 200ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .table-wrap,
+  .table-wrap tbody tr {
+    animation: none;
+  }
 }
 
 table {
@@ -645,8 +688,8 @@ td {
 }
 
 th {
-  color: rgba(7, 44, 35, 0.7);
-  background: #f6fbf9;
+  color: rgba(45, 26, 51, 0.7);
+  background: var(--soft);
   font-size: 0.74rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -662,7 +705,7 @@ tbody tr:last-child td {
 
 tbody tr:hover,
 .selected-row {
-  background: #f7fcfa;
+  background: var(--green-soft);
 }
 
 td strong,
@@ -680,7 +723,7 @@ td strong,
 .workflow-stack {
   display: grid;
   gap: 5px;
-  color: #425047;
+  color: #574a5e;
   font-size: 0.84rem;
 }
 
@@ -778,7 +821,7 @@ td strong,
 .portfolio-note p:last-child {
   max-width: 790px;
   margin-bottom: 0;
-  color: rgba(7, 44, 35, 0.78);
+  color: rgba(45, 26, 51, 0.78);
   font-size: 1.08rem;
   line-height: 1.55;
 }

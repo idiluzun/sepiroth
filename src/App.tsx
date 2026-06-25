@@ -388,7 +388,7 @@ function App() {
     <main className="app-shell">
       <header className="site-header">
         <a className="brand" href="#top" aria-label="CampaignSync home">
-          CampaignSync
+          Lockhart
         </a>
 
         <nav className="main-nav" aria-label="Main navigation">
@@ -427,13 +427,13 @@ function App() {
               <span className="preview-label">Live campaign overview</span>
               <strong>Simulated workflow health</strong>
             </div>
-            <span className={`sync-pill api-${apiStatus}`}>
+            {/* <span className={`sync-pill api-${apiStatus}`}>
               {apiStatus === "connected"
                 ? "PostgreSQL live"
                 : apiStatus === "checking"
                   ? "Checking API"
                   : "Demo mode"}
-            </span>
+            </span> */}
           </div>
 
           <div className="health-card">
@@ -762,7 +762,7 @@ function App() {
             </aside>
           )}
 
-          <div className="table-wrap">
+          <div className="table-wrap" key={`${viewMode}-${statusFilter}`}>
             <table>
               <thead>
                 <tr>
