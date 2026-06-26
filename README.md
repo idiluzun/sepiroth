@@ -5,6 +5,10 @@ A full-stack MVP for tracking mock international media campaigns across markets.
 The product is fully self-contained: it uses a local behavior-based simulation engine to generate
 clients, campaigns, lifecycle events and daily analytics data. It does not use external APIs.
 
+## Screenshot
+
+![CampaignSync website screenshot](./assets/campaignsync-screenshot.png)
+
 ## What It Does
 
 - Adds campaign records with client, market, media format, dates and approval status
