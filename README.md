@@ -43,9 +43,6 @@ The dummy data generator creates:
 - PostgreSQL
 - `pg`
 
-## CV Bullet
-
-Created a full-stack International Media Campaign Tracker using React, TypeScript, Node.js and PostgreSQL, with a self-contained simulation engine generating mock campaign workflows, market data, performance metrics and lifecycle events.
 
 ## How To Run
 
