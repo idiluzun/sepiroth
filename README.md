@@ -1,4 +1,4 @@
-# CampaignSync - International Media Campaign Tracker
+# Lockhart - International Media Campaign Tracker
 
 A full-stack MVP for tracking mock international media campaigns across markets.
 
